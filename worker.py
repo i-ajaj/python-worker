@@ -27,7 +27,7 @@ for attempt in range(20):
         credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASS)
         parameters = pika.ConnectionParameters(host=RABBITMQ_HOST, credentials=credentials)
         connection = pika.BlockingConnection(parameters)
-        logger.info("✅ Connected to RabbitMQ.")
+        logger.info("✅ Connected to RabbitMQ .")
         break
     except pika.exceptions.AMQPConnectionError:
         logger.warning("❌ RabbitMQ not ready, retrying...")
