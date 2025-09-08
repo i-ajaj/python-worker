@@ -1,0 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: python-worker-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+env:
+  - name: SPRING_RABBITMQ_HOST
+    value: "rabbitmq"
+  - name: SPRING_RABBITMQ_PORT
+    value: "5672"
+  - name: SPRING_RABBITMQ_USERNAME
+    value: "guest"
+  - name: SPRING_RABBITMQ_PASSWORD
+    value: "guest"
+
+nodeSelector:
+  pool: general
+  role: python-worker
+
+resources: {}
+tolerations: []
+affinity: {}
